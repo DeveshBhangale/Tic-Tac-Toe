@@ -11,7 +11,8 @@ public class TicTacToeGameMain {
 		System.out.println("Enter your Choice X or O");
 		char input = Character.toUpperCase(sc.next().charAt(0));
 		t.setInput(input);
-		System.out.println(t.getPlayer());
+		System.out.println(t.getComputer());
+		t.showBoard();
 		sc.close();
 	}
 

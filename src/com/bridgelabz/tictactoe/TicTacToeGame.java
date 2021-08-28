@@ -3,25 +3,29 @@ package com.bridgelabz.tictactoe;
 public class TicTacToeGame {	
 	private static char player;
 	private static char computer;
+	char []board = new char[10];
 	
 	public char[] createBoard() {
-		char []board = new char[10];
+		
 		for(int i=1;i<board.length;i++) {
-			board[i] = ' ';
+			board[i] = '_';
 		}
 		return board;
 	}
 	
+	public void showBoard() {
+		for(int i=1;i<board.length;i++) {
+			if(i==4 || i ==7) System.out.println("\n");
+			System.out.print(board[i] + " ");
+		}
+	}
+	
 	public void setInput(char player) {
 		setPlayer(player);
-		if(getPlayer() == 'X') {
-			setPlayer('O');
-		}
-		else
-			setPlayer('X');
+		setComputer((getPlayer() == 'X') ? 'O': 'X');
 	}
 
-	public static char getComputer() {
+	public char getComputer() {
 		return computer;
 	}
 
