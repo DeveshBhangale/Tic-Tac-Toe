@@ -1,8 +1,8 @@
 package com.bridgelabz.tictactoe;
 
 public class TicTacToeGame {	
-	private static char player;
-	private static char computer;
+	public static char player;
+	public static char computer;
 	char []board = new char[10];
 	
 	public char[] createBoard() {
@@ -21,23 +21,23 @@ public class TicTacToeGame {
 	}
 	
 	public void setInput(char player) {
-		setPlayer(player);
-		setComputer((getPlayer() == 'X') ? 'O': 'X');
+		this.player = player;
+		this.computer = ((this.player == 'X') ? 'O': 'X');
 	}
 
-	public char getComputer() {
-		return computer;
+	public boolean checkIndex(int index) {
+		if(board[index] == '_') {
+			return true;
+		}
+		return false;
 	}
-
-	public static void setComputer(char computer) {
-		TicTacToeGame.computer = computer;
-	}
-
-	public char getPlayer() {
-		return player;
-	}
-
-	public void setPlayer(char player) {
-		TicTacToeGame.player = player;
+	public void setIndex(int index) {
+		if(checkIndex(index)) {
+			board[index] = player;
+			showBoard();
+		}
+		else {
+			System.out.println("Entered Index is not Free");
+			showBoard();}
 	}
 }
