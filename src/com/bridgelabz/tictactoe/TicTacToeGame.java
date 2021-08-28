@@ -31,13 +31,20 @@ public class TicTacToeGame {
 		}
 		return false;
 	}
+	
+	
 	public void setIndex(int index) {
-		if(checkIndex(index)) {
-			board[index] = player;
-			showBoard();
+		if(index>0 && index < 10) {
+			if(checkIndex(index)) {
+				board[index] = player;
+				showBoard();
+			}
+			else {
+				System.out.println("Entered Index is not Free");
+				showBoard();}
 		}
-		else {
-			System.out.println("Entered Index is not Free");
-			showBoard();}
+		else 
+			System.out.println("Invalid Index");
+		
 	}
 }
