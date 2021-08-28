@@ -1,5 +1,7 @@
 package com.bridgelabz.tictactoe;
 
+import java.util.Scanner;
+
 public class TicTacToeGame {	
 	public static char player;
 	public static char computer;
@@ -33,18 +35,24 @@ public class TicTacToeGame {
 	}
 	
 	
-	public void setIndex(int index) {
-		if(index>0 && index < 10) {
-			if(checkIndex(index)) {
-				board[index] = player;
-				showBoard();
+	public int checkPosition() {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.println("\nEnter the index to set value from 1 to 9: ");
+			int index = sc.nextInt();
+			if(index>0 && index < 10) {
+				if(checkIndex(index)) {
+					sc.close();
+					return index;
+				}
+				else {
+					System.out.println("Entered Index is not Free");
+					}
 			}
-			else {
-				System.out.println("Entered Index is not Free");
-				showBoard();}
+			else 
+				System.out.println("Invalid Index");
+			
 		}
-		else 
-			System.out.println("Invalid Index");
-		
+
 	}
 }

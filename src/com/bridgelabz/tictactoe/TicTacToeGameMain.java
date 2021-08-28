@@ -13,8 +13,8 @@ public class TicTacToeGameMain {
 		t.setInput(input);
 		System.out.println("Player: "+ t.player + "\nComputer: "+t.computer);
 		t.showBoard();
-		System.out.println("\nEnter the index to set value from 1 to 9: ");
-		t.setIndex(sc.nextInt());		
+		
+		System.out.println(t.checkPosition());
 		sc.close();
 	}
 
