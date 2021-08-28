@@ -1,5 +1,5 @@
 package com.bridgelabz.tictactoe;
-import java.util.*;
+import java.util.Scanner;
 
 
 public class TicTacToeGameMain {
@@ -9,9 +9,10 @@ public class TicTacToeGameMain {
 		TicTacToeGame t = new TicTacToeGame();
 		char[] board = t.createBoard();
 		System.out.println("Enter your Choice X or O");
-		char input = sc.next().charAt(0);
-		t.setInput(Character.toUpperCase(input));
+		char input = Character.toUpperCase(sc.next().charAt(0));
+		t.setInput(input);
 		System.out.println(t.getPlayer());
+		sc.close();
 	}
 
 }

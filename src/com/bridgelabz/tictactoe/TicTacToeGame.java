@@ -19,8 +19,6 @@ public class TicTacToeGame {
 		}
 		else
 			setPlayer('X');
-		
-		
 	}
 
 	public static char getComputer() {
