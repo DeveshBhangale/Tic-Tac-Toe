@@ -38,7 +38,12 @@ public class TicTacToeGameMain {
 			}
 		}
 			
+		System.out.println("\nDo you want to play the game again enter (Y/N)");
+		String choice = sc.next().toUpperCase();
+		if(choice.equals("Y"))
+			main(args);
 		
+		sc.close();
 	}
 
 }
