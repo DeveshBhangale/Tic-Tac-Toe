@@ -20,6 +20,7 @@ public class TicTacToeGame {
 			if(i==4 || i ==7) System.out.println("\n");
 			System.out.print(board[i] + " ");
 		}
+		System.out.println("\n");
 	}
 	
 	public void setInput(char player) {
@@ -46,6 +47,7 @@ public class TicTacToeGame {
 					return index;
 				}
 				else {
+					showBoard();
 					System.out.println("Entered Index is not Free");
 					}
 			}
@@ -54,5 +56,31 @@ public class TicTacToeGame {
 			
 		}
 
+	}
+
+	public boolean checkFreeSpace() {
+		int size = board.length;
+		for(int i=1;i<size;i++) {
+			if(board[i] == '_') {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void makeMove(int index) {
+		board[index] = player;
+	}
+
+	public boolean toss() {
+		int toss = (int)(Math.random()*10)%2;
+		if(toss == 0) {
+			System.out.println("You've won the toss");
+			return true;
+		}
+		else {
+			System.out.println("Computer has won the toss");
+			return false;
+		}
 	}
 }
