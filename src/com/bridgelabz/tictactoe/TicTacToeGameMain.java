@@ -13,19 +13,32 @@ public class TicTacToeGameMain {
 		t.setInput(input);
 		System.out.println("Player: "+ t.player + "\nComputer: "+t.computer);
 		t.showBoard();	
-		if(t.toss()) {
-			int index = t.checkPosition();
+		t.toss(); // tossing
+		while(true) {
 			if(t.checkFreeSpace()) {
-				t.makeMove(index);
-				t.showBoard();
+				if(t.turn == 0) {
+					System.out.println("your turn");
+					int index = t.checkPosition();
+						t.makeMove(index);
+						t.showBoard();
+						if(t.checkWin()) {
+							System.out.println("Congrats, You've Won"); break;
+						}
+					}
+				else {
+					t.computerMove();
+					t.showBoard();
+					if(t.checkWin()) {
+						System.out.println("Better Luck Next Time"); break;
+					}
+				}
 			}
-			else
-				System.out.println("No Index is free, hence tie");
-			
+			else {
+				System.out.println("Tie"); break;
+			}
 		}
 			
 		
-		sc.close();
 	}
 
 }
