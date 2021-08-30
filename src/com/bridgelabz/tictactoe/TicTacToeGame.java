@@ -2,7 +2,6 @@ package com.bridgelabz.tictactoe;
 
 import java.util.Scanner;
 
-
 public class TicTacToeGame {	
 	public char player;
 	public char computer;
